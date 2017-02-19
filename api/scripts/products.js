@@ -15,8 +15,12 @@ var query = "SELECT * FROM products";
 
 function allProduct(req, res) {
   res.setHeader('Content-Type', 'application/json');
-	var page = req.query.page || 1;
+	var page = req.query.page || 1, brandId = req.query.brandId || null;
 	var finalQuery = query + " WHERE status = '1'";
+
+	if(brandId){
+		finalQuery = finalQuery + " AND brand_id = " + connection.escape(brandId);
+	}
 
 	helpMe.getQuery(helpMe.queryLimit(helpMe.queryOrder(finalQuery), page), function(results){
 		if(results.length >= 1){
