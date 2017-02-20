@@ -14,12 +14,14 @@ var productsFunctions = function() {
 var query = "SELECT * FROM products";
 
 function allProduct(req, res) {
+	res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.setHeader('Content-Type', 'application/json');
 	var page = req.query.page || 1, brandId = req.query.brandId || null;
-	var finalQuery = query + " WHERE status = '1'";
+	var finalQuery = query;
 
 	if(brandId){
-		finalQuery = finalQuery + " AND brand_id = " + connection.escape(brandId);
+		finalQuery = finalQuery + " WHERE brand_id = " + connection.escape(brandId);
 	}
 
 	helpMe.getQuery(helpMe.queryLimit(helpMe.queryOrder(finalQuery), page), function(results){
@@ -36,6 +38,8 @@ function allProduct(req, res) {
 }
 
 function getProduct(req, res) {
+	res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.setHeader('Content-Type', 'application/json');
   var id = req.params.id || null;
 
@@ -53,6 +57,8 @@ function getProduct(req, res) {
 }
 
 function postProduct(req, res) {
+	res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.setHeader('Content-Type', 'application/json');
   if(typeof(req.body) != 'undefined' && req.body.name && req.body.brand_id && req.body.description && req.body.price && req.body.color && req.body.stock){
 		var name = req.body.name, brand_id = req.body.brand_id, description = req.body.description, price = req.body.price, color = req.body.color, stock = req.body.stock;
@@ -83,6 +89,8 @@ function postProduct(req, res) {
 }
 
 function putProduct(req, res) {
+	res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.setHeader('Content-Type', 'application/json');
 	var id = req.params.id || null;
 	getProductValue(id, function(validationResults){
@@ -132,6 +140,8 @@ function putProduct(req, res) {
 }
 
 function deleteProduct(req, res) {
+	res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.setHeader('Content-Type', 'application/json');
 	var id = req.params.id || null;
 	getProductValue(id, function(validationResults){

@@ -9,12 +9,14 @@
 * jquery: [https://jquery.com/](https://jquery.com/)
 * gulpjs: [http://gulpjs.com/](http://gulpjs.com/)
 * bootstrap: [http://getbootstrap.com/](http://getbootstrap.com/)
+* bower: [https://bower.io/](https://bower.io/)
 
 
 ## Installation
 * clone the repository by running `git clone git@github.com:jnplonte/ecommerce.git`
-* install dependencies by running `npm install` on both {root}/api and {root}/app
-* import database and mock data by running `mysql -u -p ecommerce < ecommerce.sql`
+* install npm dependencies by running `npm install` on both {root}/api and {root}/app
+* install bower dependencies by running `bower install` on {root}/app
+* import database and mock data by running `mysql -u -p ecommerce < {root}/ecommerce.sql`
 * update the following configurations and database credentials on {root}/api/config.js
 
 
@@ -114,3 +116,7 @@
 #### delete user
 - **[DELETE]** `/api/user/{user_id}`
 - required params: "user_id"
+
+
+## How to Use The APP
+- go to {root}/app and run `gulp` it will listen to default http://localhost:3000

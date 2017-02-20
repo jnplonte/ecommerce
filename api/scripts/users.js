@@ -14,6 +14,8 @@ var usersFunctions = function() {
 var query = 'SELECT * FROM users';
 
 function allUser(req, res) {
+	res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.setHeader('Content-Type', 'application/json');
 	var page = req.query.page || 1;
 	var finalQuery = query;
@@ -24,6 +26,8 @@ function allUser(req, res) {
 }
 
 function getUser(req, res) {
+	res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.setHeader('Content-Type', 'application/json');
   var id = req.params.id || null;
 
@@ -33,6 +37,8 @@ function getUser(req, res) {
 }
 
 function postUser(req, res) {
+	res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.setHeader('Content-Type', 'application/json');
   if(typeof(req.body) != 'undefined' && req.body.name && req.body.email){
 		var name = req.body.name, email = req.body.email;
@@ -65,6 +71,8 @@ function postUser(req, res) {
 }
 
 function putUser(req, res) {
+	res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.setHeader('Content-Type', 'application/json');
 	var id = req.params.id || null;
 	getUserValue(id, function(validationResults){
@@ -101,6 +109,8 @@ function putUser(req, res) {
 }
 
 function deleteUser(req, res) {
+	res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.setHeader('Content-Type', 'application/json');
 	var id = req.params.id || null;
 	getUserValue(id, function(validationResults){

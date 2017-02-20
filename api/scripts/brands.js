@@ -14,6 +14,8 @@ var brandsFunctions = function() {
 var query = 'SELECT * FROM brands';
 
 function allBrand(req, res) {
+	res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.setHeader('Content-Type', 'application/json');
 	var page = req.query.page || 1;
 	var finalQuery = query;
@@ -24,6 +26,8 @@ function allBrand(req, res) {
 }
 
 function getBrand(req, res) {
+	res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.setHeader('Content-Type', 'application/json');
   var id = req.params.id || null;
 
@@ -33,6 +37,8 @@ function getBrand(req, res) {
 }
 
 function postBrand(req, res) {
+	res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.setHeader('Content-Type', 'application/json');
   if(typeof(req.body) != 'undefined' && req.body.name && req.body.description){
 		var name = req.body.name, description = req.body.description;
@@ -46,6 +52,8 @@ function postBrand(req, res) {
 }
 
 function putBrand(req, res) {
+	res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.setHeader('Content-Type', 'application/json');
 	var id = req.params.id || null;
 	getBrandValue(id, function(validationResults){
@@ -73,6 +81,8 @@ function putBrand(req, res) {
 }
 
 function deleteBrand(req, res) {
+	res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.setHeader('Content-Type', 'application/json');
 	var id = req.params.id || null;
 	getBrandValue(id, function(validationResults){

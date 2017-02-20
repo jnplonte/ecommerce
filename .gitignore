@@ -1,2 +1,8 @@
 /api/node_modules
+/api/npm-debug.log
+
 /app/node_modules
+/app/bower_components
+/app/dist
+/app/npm-debug.log
+/app/coverage

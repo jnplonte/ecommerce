@@ -15,6 +15,8 @@ var reviewsFunctions = function() {
 var query = 'SELECT reviews.*, users.name, users.email, users.type, users.bday FROM reviews INNER JOIN users ON reviews.user_id=users.id';
 
 function allReview(req, res) {
+	res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.setHeader('Content-Type', 'application/json');
 	var page = req.query.page || 1;
 	var finalQuery = query;
@@ -25,6 +27,8 @@ function allReview(req, res) {
 }
 
 function getReview(req, res) {
+	res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.setHeader('Content-Type', 'application/json');
   var id = req.params.id || null;
 
@@ -34,6 +38,8 @@ function getReview(req, res) {
 }
 
 function postReview(req, res) {
+	res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.setHeader('Content-Type', 'application/json');
   var product_id = req.params.product_id || null;
 	if(typeof(req.body) != 'undefined' && req.body.user_id && req.body.rating && req.body.comment){
@@ -60,6 +66,8 @@ function postReview(req, res) {
 }
 
 function putReview(req, res) {
+	res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.setHeader('Content-Type', 'application/json');
 	var id = req.params.id || null;
 	getReviewValue(id, function(validationResults){
@@ -87,6 +95,8 @@ function putReview(req, res) {
 }
 
 function deleteReview(req, res) {
+	res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.setHeader('Content-Type', 'application/json');
 	var id = req.params.id || null;
 	getReviewValue(id, function(validationResults){
