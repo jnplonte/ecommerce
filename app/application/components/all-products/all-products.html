@@ -1,0 +1,11 @@
+<div class="all-products">
+  <filter-brand></filter-brand>
+  <div class="row" ng-repeat="product in productsList" ng-show="productsList.length > 0">
+    <product-info products="product"></product-info>
+  </div>
+  <div class="row" ng-show="productsList.length == 0">
+    <div class="col-xs-12 col-md-12 col-sm-12">
+      <div class="well">NO PRODUCTS AVAILABLE</div>
+    </div>
+  </div>
+</div>

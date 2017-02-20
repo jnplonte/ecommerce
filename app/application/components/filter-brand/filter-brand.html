@@ -1,0 +1,17 @@
+<div class="filter-brand row">
+  <div class="col-md-3 col-xs-12 col-sm-6 pull-right">
+    <div class="form-horizontal">
+      <div class="form-group">
+        <label class="col-md-3 col-xs-4 col-sm-3 control-label">BRANDS</label>
+        <div class="col-md-9 col-xs-8 col-sm-9">
+          <select class="form-control brand-select">
+            <option value="">All Brand</option>
+            <option ng-repeat="brand in brandsList" ng-selected="brand.selected" value="{{brand.id}}">
+              {{brand.name}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
