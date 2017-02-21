@@ -100,8 +100,8 @@
 - optional params: "page"
 
 #### get one user
-- **[GET]** `/api/user/{user_id}`
-- required params: "user_id"
+- **[GET]** `/api/user/{user_id/email}`
+- required params: "user_id/email"
 
 #### add user
 - **[POST]** `/api/user`

@@ -31,9 +31,15 @@ function getUser(req, res) {
   res.setHeader('Content-Type', 'application/json');
   var id = req.params.id || null;
 
-	getUserValue(id, function(results){
-		res.json(results);
-	});
+	if(helpMe.isEmail(id)){
+		getUserEmail(id, function(results){
+			res.json(results);
+		});
+	}else{
+		getUserValue(id, function(results){
+			res.json(results);
+		});
+	}
 }
 
 function postUser(req, res) {

@@ -1,3 +1,7 @@
-.product{
-  
+.product .back,
+.product .back:hover,
+.product .back:active{
+  color: #333;
+  font-weight: bold;
+  text-decoration: none;
 }

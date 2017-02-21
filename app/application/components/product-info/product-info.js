@@ -3,7 +3,8 @@ ecommerceApp.directive('productInfo', function(){
     restrict: 'EA',
     replace: true,
     scope:{
-      products: '=?'
+      products: '=?',
+      type: '=?'
     },
     templateUrl: 'product-info/product-info.html',
     controller: 'productInfoController'

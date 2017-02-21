@@ -2,6 +2,7 @@ var config = require( "../../config.js" );
 var connection = require( "./database" );
 
 var helpMe = {
+	"isEmail": isEmail,
 	"queryLimit": 	queryLimit,
   "queryOrder": 	queryOrder,
 	"getQuery": 		getQuery,
@@ -9,6 +10,11 @@ var helpMe = {
 	"putQuery": 		putQuery,
 	"deleteQuery": 	deleteQuery
 };
+
+function isEmail(email) {
+	var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	return regex.test(email);
+}
 
 function queryLimit(query, page) {
   var offset = (page - 1) * parseInt(config.productLimit), rowCount = parseInt(config.productLimit);

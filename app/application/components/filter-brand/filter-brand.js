@@ -1,4 +1,4 @@
-ecommerceApp.directive('filterBrand', [function(){
+ecommerceApp.directive('filterBrand', function(){
   return {
     restrict: 'EA',
     replace: true,
@@ -11,7 +11,7 @@ ecommerceApp.directive('filterBrand', [function(){
       });
     }
   };
-}]).controller('filterBrandController', ['$scope', '$http', 'appConfig', 'helpMe', function($scope, $http, appConfig, helpMe) {
+}).controller('filterBrandController', ['$scope', '$http', 'appConfig', 'helpMe', function($scope, $http, appConfig, helpMe) {
   $scope.brandsList = [];
   $scope.params = helpMe.getParams();
   $http.get(appConfig.apiPath + '/api/brands').then(function successCallback(response) {
