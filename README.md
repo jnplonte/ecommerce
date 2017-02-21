@@ -7,9 +7,11 @@
 * mysql: [https://mysql.com/](https://mysql.com/)
 * angularjs: [https://angularjs.org/](https://angularjs.org/)
 * jquery: [https://jquery.com/](https://jquery.com/)
-* gulpjs: [http://gulpjs.com/](http://gulpjs.com/)
+* lodash: [https://lodash.com/](https://lodash.com/)
+* gulp: [http://gulpjs.com/](http://gulpjs.com/)
 * bootstrap: [http://getbootstrap.com/](http://getbootstrap.com/)
 * bower: [https://bower.io/](https://bower.io/)
+* karma: [https://karma-runner.github.io](https://karma-runner.github.io/1.0/index.html)
 
 
 ## Installation

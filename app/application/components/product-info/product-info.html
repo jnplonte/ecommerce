@@ -20,7 +20,7 @@
     </div>
 
     <div class="list-group-item reviews-container" ng-show="products.reviews.length > 0">
-      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="panel-group" id="review_{{review.id}}" role="tablist">
         <div class="panel panel-default" ng-repeat="(key, review) in products.reviews">
           <div class="panel-heading" role="tab" id="review_{{review.id}}">
             <h4 class="panel-title">

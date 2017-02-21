@@ -29,8 +29,10 @@ ecommerceApp.directive('allProducts', function(){
       additionalParam = 'brandId='+encodeURI(brandId);
     }
     $http.get(appConfig.apiPath + '/api/products?' + additionalParam).then(function successCallback(response) {
+      $scope.isReady = response.config.isReady;
       $scope.productsList = response.data;
     }, function errorCallback(response) {
+      $scope.isReady = response.config.isReady;
       $scope.productsList = [];
     });
   }

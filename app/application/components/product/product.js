@@ -22,8 +22,10 @@ ecommerceApp.directive('product', function(){
   function callProductApi(productId){
     if(typeof(productId) != 'undefined'){
       $http.get(appConfig.apiPath + '/api/product/' + encodeURI(productId)).then(function successCallback(response) {
+        $scope.isReady = response.config.isReady;
         $scope.productList = response.data;
       }, function errorCallback(response) {
+        $scope.isReady = response.config.isReady;
         $scope.productsList = [];
       });
     }

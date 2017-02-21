@@ -1,4 +1,4 @@
-<div class="product">
+<div class="product" ng-show="isReady">
   <div class="row">
     <div class="col-md-12 col-xs-12 col-sm-12">
       <ol class="breadcrumb">
@@ -22,3 +22,4 @@
     </div>
   </div>
 </div>
+<div ng-hide="isReady" class="loader">Loading...</div>

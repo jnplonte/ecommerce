@@ -1,11 +1,12 @@
-<div class="all-products">
+<div class="all-products" ng-show="isReady">
   <filter-brand></filter-brand>
-  <div class="row" ng-repeat="product in productsList" ng-show="productsList.length > 0">
+  <div class="row" ng-repeat="product in productsList" ng-if="productsList.length > 0">
     <product-info products="product" type="pageType"></product-info>
   </div>
-  <div class="row" ng-show="productsList.length == 0">
+  <div class="row" ng-if="productsList.length == 0">
     <div class="col-xs-12 col-md-12 col-sm-12">
       <div class="well">NO PRODUCTS AVAILABLE</div>
     </div>
   </div>
 </div>
+<div ng-hide="isReady" class="loader">Loading...</div>

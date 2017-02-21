@@ -1,0 +1,13 @@
+.product-review .panel-heading a,
+.product-review .panel-heading a:active,
+.product-review .panel-heading a:hover{
+  text-decoration: none;
+}
+
+.product-review .btn-default{
+  width: 100%;
+}
+
+.product-review .help-block{
+  margin: 0px;
+}
