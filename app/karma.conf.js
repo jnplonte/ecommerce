@@ -52,7 +52,7 @@ module.exports = function (config) {
             moduleName: 'ecommerce.app'
         },
 
-        singleRun: false,
+        singleRun: true,
 
         concurrency: Infinity,
 
