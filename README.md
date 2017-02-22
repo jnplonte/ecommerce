@@ -124,6 +124,7 @@
 - go to {root}/app and run `gulp` it will listen to default http://localhost:3000
 
 
-## Testing
+## Testing The APP
 - Install karma-cli globally `npm install -g karma-cli`
-- Start Karma `karma start`
+- go to {root}/app and run `gulp build`
+- on {root}/app start test by running `karma start`
